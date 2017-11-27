@@ -9,19 +9,25 @@ namespace snake3
 {
     class Enemigo : objeto
     {
+        Enemigo siguiente;
         public Enemigo()
         {
-            this.x = generar(102);
-            this.y = generar(50);
+            this.x = generar(78);
+            this.y = generar(39);
+            siguiente = null;
         }
         public void dibujar(Graphics g)
         {
-            g.FillRectangle(new SolidBrush(Color.Black), this.x, this.y, 30, 50);
+            if (siguiente != null)
+            {
+                siguiente.dibujar(g);
+            }
+            g.FillRectangle(new SolidBrush(Color.Red), this.x, this.y, 10, 30);
         }
         public void colocar()
         {
-            this.x = generar(102);
-            this.y = generar(50);
+            this.x = generar(78);
+            this.y = generar(39);
         }
         public int generar(int n)
         {
@@ -36,6 +42,23 @@ namespace snake3
         public int verYobs()
         {
             return this.y;
+        }
+
+        public void meter()
+        {
+            if (siguiente == null)
+            {
+                siguiente = new Enemigo();
+            }
+            else
+            {
+                siguiente.meter();
+            }
+        }
+
+        public Enemigo verSiguiente()
+        {
+            return siguiente;
         }
     }
 }

@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Cola.cs" />
     <Compile Include="Comida.cs" />
+    <Compile Include="Enemigo.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

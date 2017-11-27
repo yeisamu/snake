@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.puntos = new System.Windows.Forms.Label();
             this.bucle = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.level = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,16 +71,40 @@
             this.bucle.Enabled = true;
             this.bucle.Tick += new System.EventHandler(this.bucle_Tick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(456, 427);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 36);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Nivel:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // level
+            // 
+            this.level.AutoSize = true;
+            this.level.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.level.Location = new System.Drawing.Point(552, 427);
+            this.level.Name = "level";
+            this.level.Size = new System.Drawing.Size(32, 36);
+            this.level.TabIndex = 4;
+            this.level.Text = "1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 478);
+            this.Controls.Add(this.level);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.puntos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.canvas);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Snake";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             this.ResumeLayout(false);
@@ -92,6 +118,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label puntos;
         private System.Windows.Forms.Timer bucle;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label level;
     }
 }
 
